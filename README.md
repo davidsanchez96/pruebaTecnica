@@ -6,14 +6,17 @@
 * [redux-promise](https://github.com/acdlite/redux-promise)
 * [webpack](https://github.com/webpack/webpack)
 * [babel](https://github.com/babel/babel)
+* [redux-thunk](https://github.com/babel/babel)
+* [lodash](https://github.com/babel/babel)
 
 Quick Start
 -----------
 ```shell
-$ git clone https://github.com/btomashvili/react-redux-firebase-boilerplate.git
-$ cd react-redux-firebase-boilerplate
+$ git clone git@github.com:davidsanchez96/pruebaTecnica.git
+$ cd pruebaTecnica
 $ npm install
 $ npm run dev
+$ visit localhost:3000
 ```
 
 Commands
@@ -22,6 +25,3 @@ Commands
 |Script|Description|
 |---|---|
 |`npm run dev`| Run development server with webpack-dev-server @ `localhost:3000`|
-|`npm run build`| Test, and build the application to `./dist`|
-|`npm start`| Start production ready app with pm2 from `./dist` @ `localhost:8080`|
-|`npm run lint`| Run ESLint on `./src`|

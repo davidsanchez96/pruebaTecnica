@@ -1,5 +1,13 @@
 import React from 'react';
 
 export default () => {
-  return <div> Home Page of our application! </div>;
+  return (
+    <div>
+      <div className="bd-pageheader">
+        <div className="container">
+          <h1>Prueba Tecnica</h1>
+        </div>
+      </div>
+    </div>
+  );
 };

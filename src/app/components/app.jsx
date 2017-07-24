@@ -21,6 +21,8 @@ class App extends Component {
   }
 
   renderUserMenu(user) {
+    console.log(user);
+    console.log(this.props.currentUser);
     if (user) {
       if (user.role === 'Administrador') {
         return <Link className="nav-link" to="/dashboard"> Panel de usuarios</Link>;

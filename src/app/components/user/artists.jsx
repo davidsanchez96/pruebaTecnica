@@ -25,9 +25,8 @@ class Artists extends Component {
     }
 
     renderHeaderProfile() {
-        console.log(this.props.dashboard);
         return (
-            <div className="jumbotron jumbotron-fluid">
+            <div className="bd-pageheader">
                 <div className="container">
                     <h1 className="display-3">PERFIL USUARIO</h1>
                     <p className="lead">Email usuario: {this.props.dashboard.selectedUser[0].email}</p>

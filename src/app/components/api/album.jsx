@@ -67,7 +67,6 @@ class Album extends Component {
   }
 
   markAsFavoriteTrack({ artistName, name, images }) {    
-    console.log(this.props.dashboard.selectedUser);
     this.props.createFavoriteTrack(this.props.dashboard.selectedUser[0].uid, { artistName, name, images });
   }
 

@@ -21,11 +21,15 @@ class UserDetails extends Component {
     }
 
   render() {
-    if (!this.props.dashboard.selectedUser) {
+    if (!this.props.dashboard.selectedUser || !this.props.dashboard.selectedUser) {
       return <Loading />;
     }
+    
+    let photoURL = this.props.dashboard.selectedUser[0].avatar;
+    if (!photoURL || photoURL === '') {
+        photoURL = 'http://eadb.org/wp-content/uploads/2015/08/profile-placeholder-300x300.jpg';
+    }
 
-    console.log('hey',this.props.dashboard.selectedUser);
     return (
       <div>
         <div className="bd-pageheader">
@@ -34,7 +38,7 @@ class UserDetails extends Component {
             <p className="lead">Email usuario: {this.props.dashboard.selectedUser[0].email}</p>
             <img
                 className="figure-img img-fluid rounded-circle"
-                src={this.props.dashboard.selectedUser[0].avatar}
+                src={photoURL}
                 alt="Card image cap"
             />
           </div>

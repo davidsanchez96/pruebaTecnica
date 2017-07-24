@@ -25,6 +25,12 @@ class Artists extends Component {
     }
 
     renderHeaderProfile() {
+
+        let photoURL = this.props.currentUser.photoURL;
+        if (!photoURL || photoURL === '') {
+            photoURL = 'http://eadb.org/wp-content/uploads/2015/08/profile-placeholder-300x300.jpg';
+        }
+
         return (
             <div className="bd-pageheader">
                 <div className="container">
@@ -32,7 +38,7 @@ class Artists extends Component {
                     <p className="lead">Email usuario: {this.props.dashboard.selectedUser[0].email}</p>
                     <img
                         className="figure-img img-fluid rounded-circle"
-                        src={this.props.currentUser.photoURL}
+                        src={photoURL}
                         alt="Card image cap"
                     />
                 </div>

@@ -62,6 +62,7 @@ const viewUser = (request, dispatch) => {
       payload: [{
         uid: currentUser.uid,
         email: currentUser.email,
+        photoURL: currentUser.photoURL,
       }],
     });
   });

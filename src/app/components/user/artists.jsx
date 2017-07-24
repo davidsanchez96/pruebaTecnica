@@ -30,16 +30,21 @@ class Artists extends Component {
                 <div className="container">
                     <h1 className="display-3">PERFIL USUARIO</h1>
                     <p className="lead">Email usuario: {this.props.dashboard.selectedUser[0].email}</p>
+                    <img
+                        className="figure-img img-fluid rounded-circle"
+                        src={this.props.currentUser.photoURL}
+                        alt="Card image cap"
+                    />
                 </div>
             </div>
         );
     }
 
     render() {
-        if (!this.props.currentUser || !this.props.dashboard) {
+        if (!this.props.currentUser || !this.props.dashboard.selectedUser) {
             return <Loading />;
         }
-
+        console.log('this.props.dashboard.selectedUser', this.props.currentUser);
         return (
             <div>
                 {this.renderHeaderProfile()}

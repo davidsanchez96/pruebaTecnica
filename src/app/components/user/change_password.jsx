@@ -19,37 +19,37 @@ class ChangePassword extends Component {
       let repeatPassword = this.refs.repeatPassword.value;
       if (password !== repeatPassword) {
         this.setState({
-          message: 'Please password must match!',
+          message: 'Las contraseñas no coinciden!',
       });
     } else {
         this.props.changePassword(password).then((data) => {
           if (data.payload.errorCode)
             this.setState({ message: data.payload.errorMessage });
           else
-          this.setState({ message: 'Password was changed!' });
+          this.setState({ message: 'Contraseña actualizada exitosamente!' });
       });
     }
   }
 
     render() {
       return (
-      <form id="ChangePassword" role="form" onSubmit={this.onFormSubmit}>
-        <h4> Change Password </h4>
+      <form id="ChangePassword" role="form" onSubmit={this.onFormSubmit} style={{paddingTop: 20}}>
+        <h4> Cambiar contraseña </h4>
         <h5> {this.state.message} </h5>
         <div className="form-group">
-          <label htmlFor="password"> New Password: </label>
+          <label htmlFor="password"> Nueva contraseña: </label>
           <input type="password" className="form-control"
             name="password" ref="password" id="password" 
           />
         </div>
         <div className="form-group">
-          <label htmlFor="repeatPassword"> Repeat Password: </label>
+          <label htmlFor="repeatPassword"> Repita la contraseña: </label>
           <input type="password" className="form-control"
             name="repeatPassword" ref="repeatPassword" id="repeatPassword" 
           />
 
         </div>
-        <button type="submit" className="btn btn-primary">Change Password</button>
+        <button type="submit" className="btn btn-primary">Actualizar</button>
       </form>
     );
   }

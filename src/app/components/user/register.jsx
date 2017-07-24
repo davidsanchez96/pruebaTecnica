@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { registerUser } from "../../actions/firebase_actions";
 import { createUser } from "../../actions/user_actions";
+import { updateUser } from '../../actions/firebase_actions';
 
 class UserRegister extends Component {
   constructor(props) {
@@ -35,6 +36,12 @@ class UserRegister extends Component {
           avatar,
           role,
         });
+        this.props.updateUser({
+           email,
+           displayName: name,
+           photoURL: avatar,
+        });
+
         browserHistory.push("/profile");
       }
     });
@@ -124,7 +131,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       registerUser,
-      createUser
+      createUser,
+      updateUser,
     },
     dispatch
   );

@@ -40,32 +40,36 @@ class UserProfile extends Component {
         if (!this.props.currentUser) {
             return <Loading />;
         }
-
+        let photoURL = this.props.currentUser.photoURL;
+        if (!photoURL || photoURL === '') {
+            photoURL = 'http://eadb.org/wp-content/uploads/2015/08/profile-placeholder-300x300.jpg';
+        }
         return (
-            <div className="col-md-6">
-                <form id="frmProfile" role="form" onSubmit={this.onFormSubmit}>
-                    <h2>User Profile Page</h2>
-                    <p>{this.state.message}</p>
-                    <br />
-                    <div className="form-group">
-                        <label htmlFor="email">Email: </label>
-                        <input
-                          type="text" defaultValue={this.props.currentUser.email}
-                          className="form-control" id="email" ref="email" placeholder="Email" name="email"
-                        />
+            <div>
+                <div className="row">
+                    <div className="col-md-6">                
+                        <ChangePassword />                
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="displayName">Display name: </label>
-                        <input
-                          type="text" defaultValue={this.props.currentUser.displayName}
-                          className="form-control" ref="displayName" id="displayName" placeholder="Display name"
-                          name="displayName"
-                        />
+                    <div className="col-sm-6 col-md-4 col-lg-3 mt-4">
+                    <div className="card" >
+                    <img
+                        className="card-img-top"
+                        src={photoURL}
+                        alt="Card image cap"
+                    />
+                    <div className="card-block">
+                        <h4 className="card-title">
+                            {this.props.currentUser.displayName}
+                        </h4>
+                        <p className="card-text">
+                            {this.props.currentUser.email}
+                        </p>
                     </div>
-                    <button type="submit" className="btn btn-primary">Update</button>
-                </form>
-                <ChangePassword />                
+                    </div>
+                </div>
+                </div>                
             </div>
+            
         );
     }
 

@@ -25,12 +25,18 @@ class UserDetails extends Component {
       return <Loading />;
     }
 
+    console.log('hey',this.props.dashboard.selectedUser);
     return (
       <div>
         <div className="bd-pageheader">
           <div className="container">
             <h1 className="display-3">MODO ADMINISTRADOR</h1>
             <p className="lead">Email usuario: {this.props.dashboard.selectedUser[0].email}</p>
+            <img
+                className="figure-img img-fluid rounded-circle"
+                src={this.props.dashboard.selectedUser[0].avatar}
+                alt="Card image cap"
+            />
           </div>
         </div>
         <div className="row">
